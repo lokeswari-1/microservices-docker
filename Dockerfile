@@ -6,6 +6,6 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 #COPY target/springAppforDockerWithMysql-0.0.1-SNAPSHOT.jar app.jar
-COPY --from=0 /app/target/-0.0.1-SNAPSHOT.jar /app/myapp.jar
+COPY --from=0 /app/target/employee-service-0.0.1-SNAPSHOT.jar /app/myapp.jar
 #EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "myapp.jar"]
